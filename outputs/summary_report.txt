@@ -1,0 +1,42 @@
+SALES ANALYSIS SUMMARY
+========================================
+Total revenue: £2,775,366
+Total orders: 5,529
+Unique customers: 895
+Average order value: £501.97
+Units sold: 16,513
+
+Best month: 2024-12 (£182,090)
+Top category: Electronics (68.8% of revenue)
+Top region: North (28.8% of revenue)
+Year-on-year revenue change: -6.3%
+
+Top 5 products:
+product
+Laptop          986121.0
+Smartphone      609348.0
+Desk            241071.0
+Smartwatch      207320.0
+Office Chair    148242.0
+
+Top 10 customers by spend:
+             recency  frequency  monetary
+customer_id                              
+C0703             44         10   19726.0
+C0246             30         17   17222.0
+C0829              4         12   14018.0
+C0477             58          9   13683.0
+C0145             15          9   12409.0
+C0598             32          9   12188.0
+C0317             10         10   11751.0
+C0564              9         10   11577.0
+C0033             48         10   11560.0
+C0394             30         12   10897.0
+
+Discount effect:
+          orders  avg_qty     revenue
+discount                             
+0.00        3231     2.97  1660418.08
+0.05        1162     3.01   563856.66
+0.10         838     2.97   414930.30
+0.20         298     3.15   136160.73
