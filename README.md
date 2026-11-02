@@ -1,44 +1,91 @@
-# Sales Data Analysis using Python
+# Sales Data Analysis Using Python
 
-End-to-end exploratory analysis of retail sales data using **pandas** and **matplotlib**: data cleaning, feature engineering, KPI calculation, customer analysis and visualisation.
+An end-to-end exploratory data analysis (EDA) project using **Python, Pandas and Matplotlib** to explore retail sales data, identify business trends and generate useful insights.
 
-## Business questions answered
-- How much revenue, how many orders and customers, and what is the average order value?
-- Which months, categories, regions and products drive revenue?
-- Is there seasonality (e.g. Nov/Dec peak)?
-- Who are the highest-value customers (recency / frequency / monetary view)?
-- Do discounts increase the quantity customers buy?
+This project demonstrates data cleaning, feature engineering, KPI reporting, customer analysis and data visualisation using a synthetic retail dataset.
 
-## Project structure
-```
+## Business Questions
+
+- What are the total revenue, orders, customers and average order value?
+- Which months, categories, regions and products generate the most revenue?
+- Are there seasonal sales trends?
+- Who are the highest-value customers?
+- How do discounts affect customer purchasing behaviour?
+
+## Project Structure
+
+```text
 sales-data-analysis/
-├── generate_data.py     # creates a synthetic dataset (skip if using your own CSV)
-├── sales_analysis.py    # cleaning, analysis, charts, report
+├── data/
+│   └── sales_data.csv
+├── outputs/
+│   ├── cleaned_sales_data.csv
+│   ├── monthly_revenue.png
+│   ├── revenue_by_category.png
+│   ├── revenue_by_region.png
+│   ├── revenue_by_weekday.png
+│   ├── summary_report.txt
+│   └── top_products.png
+├── generate_data.py
+├── sales_analysis.py
 ├── requirements.txt
-├── data/sales_data.csv
-└── outputs/             # charts, summary_report.txt, cleaned_sales_data.csv
+└── README.md
 ```
 
-## How to run
+## Technologies Used
+
+- Python
+- Pandas
+- Matplotlib
+- NumPy
+
+## How to Run
+
 ```bash
 pip install -r requirements.txt
-python generate_data.py      # optional
+python generate_data.py
 python sales_analysis.py
 ```
-To use your own data (e.g. a Kaggle dataset), save it as `data/sales_data.csv` with columns:
-`order_id, order_date, customer_id, region, category, product, quantity, unit_price, discount`.
 
-## Methodology
-1. **Cleaning:** removed duplicate orders; filled missing regions with "Unknown"; imputed missing prices using the product's median price.
-2. **Feature engineering:** `revenue = quantity x unit_price x (1 - discount)`, plus month, year and weekday.
-3. **Analysis:** groupby aggregations for time, category, region and product; RFM-style customer table; discount impact.
-4. **Visualisation:** monthly trend, category bars, region pie, top products, weekday pattern.
+If you already have `data/sales_data.csv`, you can skip `generate_data.py`.
 
-## Sample findings (synthetic data)
-- Total revenue about £2.78M across 5,529 orders and 895 customers.
-- Electronics generates roughly 69% of revenue; Laptop and Smartphone are the top products.
-- December is the best month, showing clear year-end seasonality.
-- Discounts barely change the average quantity per order, so deep discounts may reduce margin without lifting volume.
+## Data Cleaning and Methodology
 
-## Skills demonstrated
-Python, pandas, matplotlib, data cleaning, EDA, KPI reporting, customer segmentation basics.
+1. Removed duplicate records.
+2. Handled missing region and unit price values.
+3. Created revenue, month, year and weekday features.
+4. Analysed revenue by category, region, product and month.
+5. Performed RFM-style customer analysis.
+6. Evaluated discount patterns.
+7. Generated charts and a summary report.
+
+## Key Findings
+
+Results from the synthetic sample dataset:
+
+| Metric | Result |
+|---|---:|
+| Total Revenue | £2,775,366 |
+| Total Orders | 5,529 |
+| Unique Customers | 895 |
+| Average Order Value | £501.97 |
+| Units Sold | 16,513 |
+| Best Month | December 2024 |
+| Top Category | Electronics |
+| Top Region | North |
+
+### Business Insights
+
+- Electronics contributed approximately 68.8% of total revenue.
+- Laptop and Smartphone were the highest-revenue products.
+- December recorded the highest monthly revenue.
+- The North region contributed approximately 28.8% of revenue.
+- Average order quantities were similar across discount levels in this sample.
+
+## Skills Demonstrated
+
+Python, Pandas, NumPy, Matplotlib, Data Cleaning, Exploratory Data Analysis, Feature Engineering, KPI Reporting, Data Visualisation and RFM Analysis.
+
+## Dataset Disclaimer
+
+This project uses synthetic sample data for educational and portfolio purposes. The results do not represent a real company's sales or business performance.
